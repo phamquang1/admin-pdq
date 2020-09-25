@@ -1,0 +1,58 @@
+<span *ngIf="type == 'primary'">
+    <button *ngIf="routerLink" [routerLink]="routerLink" mat-flat-button [type]="buttonType" [color]="type"
+    [ngClass]="['button','is-primary','is-outlined',isFullWidth ? isFullWidth : '', hasGap ? 'has-gap' : '']"
+    [ngStyle]="{'font-weight' : fontWeight}"
+    [disabled]="disabled" (click)="clickFuntion()"
+    >
+        <ng-container [ngTemplateOutlet]="content"></ng-container>
+    
+    </button>
+    <button *ngIf="!routerLink"  mat-flat-button [type]="buttonType" [color]="type"
+    [ngClass]="['button','is-primary','is-outlined',isFullWidth ? isFullWidth : '', hasGap ? 'has-gap' : '']"
+    [ngStyle]="{'font-weight' : fontWeight}"
+    [disabled]="disabled" (click)="clickFuntion()"
+    >
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+    
+    </button>
+</span>
+<span *ngIf="type == 'accent'">
+    <button *ngIf="routerLink" [routerLink]="routerLink" mat-flat-button [type]="buttonType" [color]="type"
+    [ngClass]="['button','is-primary','is-outlined',isFullWidth ? isFullWidth : '', hasGap ? 'has-gap' : '']"
+    [ngStyle]="{'font-weight' : fontWeight}"
+    [disabled]="disabled" (click)="clickFuntion()"
+    >
+        <ng-container [ngTemplateOutlet]="content"></ng-container>
+    
+    </button>
+    <button *ngIf="!routerLink"  mat-flat-button [type]="buttonType" [color]="type"
+    [ngClass]="['button','is-primary','is-outlined',isFullWidth ? isFullWidth : '', hasGap ? 'has-gap' : '']"
+    [ngStyle]="{'font-weight' : fontWeight}"
+    [disabled]="disabled" (click)="clickFuntion()"
+    >
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+    
+    </button>
+</span>
+<span *ngIf="type == 'warn'">
+    <button *ngIf="routerLink" [routerLink]="routerLink" mat-flat-button [type]="buttonType" [color]="type"
+    [ngClass]="['button','is-primary','is-outlined',isFullWidth ? isFullWidth : '', hasGap ? 'has-gap' : '']"
+    [ngStyle]="{'font-weight' : fontWeight}"
+    [disabled]="disabled" (click)="clickFuntion()"
+    >
+        <ng-container [ngTemplateOutlet]="content"></ng-container>
+    
+    </button>
+    <button *ngIf="!routerLink"  mat-flat-button [type]="buttonType" [color]="type"
+    [ngClass]="['button','is-primary','is-outlined',isFullWidth ? isFullWidth : '', hasGap ? 'has-gap' : '']"
+    [ngStyle]="{'font-weight' : fontWeight}"
+    [disabled]="disabled" (click)="clickFuntion()"
+    >
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+    
+    </button>
+</span>
+
+<ng-template #content>
+    <ng-content></ng-content>
+</ng-template>

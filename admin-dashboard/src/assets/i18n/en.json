@@ -1,0 +1,19 @@
+{
+    "appName" : "Quang Pham Dinh",
+    "about" : {
+        "title" : "About"
+    },
+    "post" : {
+        "title" : "Posts"
+    },
+    "report" : {
+        "title" : "Repost"
+    },
+    "news" : {
+        "title" : "NEWS"
+    },
+    "dialogConfirm" : {
+        "cancel" : "Cancel",
+        "ok" : "OK"
+    }
+}

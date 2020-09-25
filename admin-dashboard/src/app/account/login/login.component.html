@@ -1,0 +1,41 @@
+<div [@routerTransition] class="bg-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12 form-wapper">
+                <div class="card example-full-width">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            Login
+                        </h2>
+                        <div>
+                            <div class="form-group">
+                                <span class="material-icons">
+                                    account_circle
+                                </span>
+                                <mat-form-field class="" appearance="outline">
+                                    <mat-label>Tài khoản</mat-label>
+                                    <input matInput placeholder="Ex. Pizza" >
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <span class="material-icons">
+                                    vpn_key
+                                    </span>
+                                <mat-form-field class="" appearance="outline">
+                                    <mat-label>Mật khẩu</mat-label>
+                                    <input type="password" matInput placeholder="Ex. Pizza" >
+                                </mat-form-field>
+                            </div>
+                            <button mat-raised-button color="primary" style="float: right; margin-bottom: 5px;">Đăng nhập</button>
+                            <div class="form-group">
+                                <button mat-raised-button color="warn" style="margin-bottom: 5px;" (click)="signInWithGoogle()">Login with Google</button>
+                                <button mat-raised-button color="primary">Login with Facebook</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button mat-raised-button color="primary" (click)="signInWithGoogle()">Login with Facebook</button>

@@ -1,0 +1,14 @@
+<div  *ngIf="visible"
+[ngClass]="['alert', type == 'success' ? 'alert-success' : type == 'error' ? 'alert-error' : type == 'danger' ? 'alert-danger' :'alert-primary']">
+    <div class="alert-body">
+        <div class="alert-body-title">
+            <ng-content select="[content]"></ng-content>
+        </div>
+        <div class="alert-body-close">
+            <!-- <fa-icon [icon]="faTimes" (click)="onClose()"></fa-icon> -->
+            <app-button type="accent" (click)="onClose()">
+                <span>Close</span>
+            </app-button>
+        </div>
+    </div>
+</div>

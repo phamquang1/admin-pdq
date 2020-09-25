@@ -1,0 +1,23 @@
+<div [@routerTransition]>
+    <div class="container">
+        <div class="row">
+            <app-button type="primary" hasGap="true" (click)="alertPrimary()">
+                <span > Primary</span>
+            </app-button>
+            <app-button type="accent" hasGap="true" >
+                <span > Accent</span>
+            </app-button>
+            <app-button type="warn" hasGap="true" >
+                <span > Warn</span>
+            </app-button>
+        </div>
+    </div>
+</div>
+<p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, adipisci vel aliquam corporis dolorem officiis, accusamus excepturi ad tenetur, repudiandae fuga est soluta tempore optio non quidem a. Similique, assumenda?
+</p>
+<app-alert *ngIf="visible" type="danger">
+    <span content>
+        Primary test done!
+    </span>
+</app-alert>

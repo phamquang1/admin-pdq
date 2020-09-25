@@ -1,0 +1,9 @@
+<div [@routerTransition]>
+    <div class="container">
+        <h3>{{title ? title : '+_||'}}</h3>
+        <div class="button-wapper">
+            <button mat-raised-button color="primary" (click)="_dialogRef.close(true)" style="margin-right: 10px; width: 40px;padding : 2px 5px">{{'dialogConfirm.ok' | translate}}</button>
+            <button mat-raised-button met-button color="warn" (click)="_dialogRef.close(false)" style="width: 40px; padding : 2px 5px">{{'dialogConfirm.cancel' | translate}}</button>
+        </div>
+    </div>
+</div>

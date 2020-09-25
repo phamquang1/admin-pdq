@@ -1,0 +1,54 @@
+<mat-nav-list>
+  <app-profile></app-profile>
+  <mat-divider></mat-divider>
+  <div class="menu">
+    <ul class="list">
+      <ng-container *ngFor="let menuItem of menuItems;let i = index">
+        <li  routerLinkActive="active" >
+          <!-- Nếu không có menu con -->
+          <a [routerLink]="[menuItem.route]" *ngIf="!menuItem.items.length" >
+            <i *ngIf="menuItem.icon" class="material-icons">{{menuItem.icon}}</i>
+            <span>{{menuItem.name | translate}}</span>
+            <!-- <span style="color:rgb(10, 10, 10); background: red; height: 50px; width: 50px; border-radius: 50%; display: block;">3</span> -->
+          </a>
+          <!-- Nếu có menu con -->
+          <a href="javascript:void(0);" *ngIf="menuItem.items.length" [ngClass]="{'menu-toggle': menuItem.items.length}"  (click)="dropClick(i + 'a')" id="{{i + 'aa'}}">
+            <i *ngIf="menuItem.icon" class="material-icons">{{menuItem.icon}}</i>
+            <span>{{menuItem.name | translate}}</span>
+          </a>
+
+          <ul *ngIf="menuItem.items.length" class="ml-menu " id="{{i + 'a'}}">
+            <ng-container *ngFor="let subMenu of menuItem.items ; let j = index">
+              <li  routerLinkActive="active" >
+                <!-- Nếu có menu con nữa -->
+              <a [routerLink]="[subMenu.route]" *ngIf="!subMenu.items.length" class="toggled" >
+                <i *ngIf="subMenu.icon" class="material-icons">{{subMenu.icon}}</i>
+                <span>{{subMenu.name | translate}}</span>
+                <!-- <span>1</span> -->
+              </a>
+              <!-- Nếu có menu con nữa nữa -->
+              <a href="javascript:void(0);" *ngIf="subMenu.items.length" [ngClass]="{'menu-toggle': subMenu.items.length}" (click)="dropClick(j + i + 'b')" id="{{j + i + 'ba'}}">
+                <i *ngIf="subMenu.icon" class="material-icons">{{subMenu.icon}}</i>
+                <span>{{subMenu.name | translate}}</span>
+              </a>
+
+              <ul *ngIf="subMenu.items.length" class="ml-menu" id="{{j + i + 'b'}}">
+                <ng-container *ngFor="let subsubMenu of subMenu.items">
+                  <li  routerLinkActive="active">
+                    <!-- 3 menu thooi -->
+                    <a [routerLink]="[subsubMenu.route]">
+                      <i *ngIf="subsubMenu.icon" class="material-icons">{{subsubMenu.icon}}</i>
+                      <span>{{subsubMenu.name | translate}}</span>
+                    </a>
+                  </li>
+                </ng-container>
+              </ul>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+  
+</mat-nav-list>

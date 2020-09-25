@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-body">
+        <form class="example-form" [formGroup]="signForm" (ngSubmit)="onSubmit()">
+
+
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder=""  formControlName="email" autocomplete="off">
+            </mat-form-field>
+            <pre>{{ signForm.get('email')?.errors | json }}</pre>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder=""  formControlName="password" autocomplete="off">
+            </mat-form-field>
+            <pre>{{ signForm.get('password')?.errors | json }}</pre>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Confirm password</mat-label>
+                <input matInput placeholder=""  formControlName="confirmpassword" autocomplete="off">
+            </mat-form-field>
+            <pre>{{ signForm.get('confirmpassword')?.errors | json }}</pre>
+            <pre>{{ signForm.errors | json }}</pre>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="signForm.invalid">Submit</button>
+            <pre>{{ signForm.value | json }}</pre>
+          </form>
+    </div>
+</div>

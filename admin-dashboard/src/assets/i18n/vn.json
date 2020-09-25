@@ -1,0 +1,19 @@
+{
+    "appName" : "Phạm Đình Quang",
+    "about" : {
+        "title" : "Giới thiệu"
+    },
+    "post" : {
+        "title" : "Bài viết"
+    },
+    "report" : {
+        "title" : "Báo cáo"
+    },
+    "news" : {
+        "title" : "Tin tức"
+    },
+    "dialogConfirm" : {
+        "cancel" : "Hủy",
+        "ok" : "Đồng ý"
+    }
+}

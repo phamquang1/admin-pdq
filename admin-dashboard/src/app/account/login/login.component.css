@@ -1,0 +1,26 @@
+.example-full-width{
+    width: 50%;
+    text-align: center;
+}
+.form-group > *{
+    width: 100%;
+}
+.form-wapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10% auto;
+}
+.card-body{
+    -webkit-box-shadow: 10px 7px 30px -15px rgba(0,0,0,0.52);
+-moz-box-shadow: 10px 7px 30px -15px rgba(0,0,0,0.52);
+box-shadow: 10px 7px 30px -15px rgba(0,0,0,0.52);
+}
+.bg-img{
+    background-image: url(../../../assets/img/tranh-1-Hanoi-1952-1536804638.jpg),linear-gradient(to bottom,
+    rgba(136, 131, 131, 0),
+    rgba(183, 231, 185, 0.3));
+    object-fit: cover;
+    /* background-size: cover; */
+    height: 100vh;
+}

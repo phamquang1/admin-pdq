@@ -1,0 +1,14 @@
+npm i abp-web-resources
+npm i abp-ng2-module // check permisstion ,noitify, message
+npm i @angular/flex-layout @angular/cdk --save
+import { MediaObserver, MediaChange } from '@angular/flex-layout';// collap theo manf hinhf
+npm i --save angular-highcharts highcharts,
+
+npm i angularx-social-login // login google, facebook
+npm install @ngx-translate/core --save //tranlate languge
+npm install @ngx-translate/http-loader --save //tranlate language
+npm install date-fns --save // xứ lý datetime thay cho momentjs khá ngon, nodé dùng đc
+
+
+npm install angular-notifier // noityfi error, chú ý cái này phải import @import "~angular-notifier/styles"; trong file style.css
+thêm <notifier-container></notifier-container> trong file html
