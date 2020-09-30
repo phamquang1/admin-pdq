@@ -7,6 +7,9 @@
               <mat-label>Email</mat-label>
               <input matInput placeholder=""  formControlName="email" autocomplete="off">
             </mat-form-field>
+            <!-- <span *ngIf="signForm.get('email')?.errors?.whitespace" style="color: red;"> Value is only whitespace</span> -->
+            <span *ngIf="signForm.get('email')?.errors?.minlength" style="color: red;"> 6 char</span>
+            
             <pre>{{ signForm.get('email')?.errors | json }}</pre>
 
             <mat-form-field class="example-full-width" appearance="outline">

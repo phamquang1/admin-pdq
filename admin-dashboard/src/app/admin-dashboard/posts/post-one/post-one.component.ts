@@ -1,5 +1,7 @@
 import { Component, ContentChild, OnInit, TemplateRef, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { forkJoin, from, of } from 'rxjs';
+import { delay, map } from 'rxjs/operators'
 import { noWhiteSpace } from 'src/app/shared/validate/validate-white-space';
 import { ContentOneDirective } from './content-one.directive';
 
@@ -9,13 +11,25 @@ import { ContentOneDirective } from './content-one.directive';
   styleUrls: ['./post-one.component.css']
 })
 export class PostOneComponent implements OnInit {
-  signForm: FormGroup
+  signForm: FormGroup;
+   observer = {
+    next: (val) => console.log(val),
+    error: (err) => console.log(err),
+    complete: () => console.log('complete'),
+  };
   constructor(
     private fb : FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.initForm()
+    this.initForm();
+
+    forkJoin([
+      of('1').pipe(delay(1000)),
+      of('2').pipe(delay(2000)),
+      of('hello').pipe(delay(3000)),
+
+    ]).pipe(map(([a,b,c]) => ({a,b,c}))).subscribe(this.observer)
     
   }
 

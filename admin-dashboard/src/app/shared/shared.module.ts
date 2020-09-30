@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -97,6 +98,7 @@ const customNotifierOptions: NotifierOptions = {
     MatDialogModule,
     MatInputModule,
     MatTabsModule,
+    MatFormFieldModule,
 
     FlexLayoutModule,
     RouterModule,
@@ -120,7 +122,7 @@ const customNotifierOptions: NotifierOptions = {
     MatInputModule,
     MatTabsModule,
 
-    //noityfi
+    // noityfi
     NotifierModule,
     TranslateModule,
     // component

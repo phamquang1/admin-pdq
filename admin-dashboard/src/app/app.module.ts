@@ -9,11 +9,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from "@angular/forms";
 
 // đá ngôn ngữ
-import {TranslateModule,TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader'
-import { HttpClient,HttpClientModule } from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-//login gg
+// login gg
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
   GoogleLoginProvider,
@@ -23,13 +23,12 @@ import {
 
 
 export function HttpLoaderFactory(http: HttpClient){
-  return new TranslateHttpLoader(http,'./assets/i18n/', '.json')
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json' );
 }
 
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -48,7 +47,6 @@ export function HttpLoaderFactory(http: HttpClient){
     })
   ],
   providers: [
-    
   ],
   bootstrap: [AppComponent]
 })

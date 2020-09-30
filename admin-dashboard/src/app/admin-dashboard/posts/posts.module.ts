@@ -23,8 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     // NotifierModule.withConfig(customNotifierOptions),
     SharedModule,
     TranslateModule
-    
   ],
-  exports : [PostOneComponent,PostTwoComponent,PostThreeComponent]
+  exports : [PostOneComponent, PostTwoComponent, PostThreeComponent]
 })
 export class PostsModule { }
