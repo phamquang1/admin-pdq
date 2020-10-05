@@ -159,3 +159,6 @@ mat-nav-list{
 .active {
   /* background-color: yellow; */
 }
+.color-red{
+  color: red !important;
+}

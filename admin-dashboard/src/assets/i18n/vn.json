@@ -15,5 +15,101 @@
     "dialogConfirm" : {
         "cancel" : "Hủy",
         "ok" : "Đồng ý"
+    },
+    "autocomplete" : {
+        "title" : "Autocomplete"
+    },
+    "badge" : {
+        "title" : "Badge"
+    },
+    "bottomSheet" : {
+        "title" : "Bottom sheet"
+    },
+    "button" : {
+        "title" : "Button"
+    },
+    "buttonToggle" : {
+        "title" : "Button toggle"
+    },
+    "card" : {
+        "title" : "Card"
+    },
+    "checkbox" : {
+        "title" : "Checkbox"
+    },
+    "chips" : {
+        "title" : "Chips"
+    },
+    "datepicker" : {
+        "title" : "Datepicker"
+    },
+    "dialog" : {
+        "title" : "Dialog"
+    },
+    "divider" : {
+        "title" : "Divider"
+    },
+    "expansionPanel" : {
+        "title" : "Expansion Panel"
+    },
+    "formField" : {
+        "title" : "Form Field"
+    },
+    "gridList" : {
+        "title" : "Grid List"
+    },
+    "icon" : {
+        "title" : "Icon"
+    },
+    "input" : {
+        "title" : "Input"
+    },
+    "list" : {
+        "title" : "List"
+    },
+    "menu" : {
+        "title" : "Menu"
+    },
+    "paginator" : {
+        "title" : "Paginator"
+    },
+    "progressBar" : {
+        "title" : "Progress Bar"
+    },
+    "progressSpinner" : {
+        "title" : "Progress spinner"
+    },
+    "radioButton" : {
+        "title" : "Radio Button"
+    },
+    "ripples" : {
+        "title" : "Ripples"
+    },
+    "select" : {
+        "title" : "Select"
+    },
+    "sidenav" : {
+        "title" : "Sidenav"
+    },
+    "slideToggle" : {
+        "title" : "Slide Toggle"
+    },
+    "slider" : {
+        "title" : "Slider"
+    },
+    "snackbar" : {
+        "title" : "Snackbar"
+    },
+    "sortHeader" : {
+        "title" : "Sort Header"
+    },
+    "stepper" : {
+        "title" : "Stepper"
+    },
+    "table" : {
+        "title" : "Table"
+    },
+    "tabs" : {
+        "title" : "Tabs"
     }
 }

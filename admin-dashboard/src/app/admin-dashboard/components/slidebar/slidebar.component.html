@@ -8,7 +8,7 @@
           <!-- Nếu không có menu con -->
           <a [routerLink]="[menuItem.route]" *ngIf="!menuItem.items.length" >
             <i *ngIf="menuItem.icon" class="material-icons">{{menuItem.icon}}</i>
-            <span>{{menuItem.name | translate}}</span>
+            <span [ngClass]="{'color-red': section === menuItem.route}">{{menuItem.name | translate}}</span>
             <!-- <span style="color:rgb(10, 10, 10); background: red; height: 50px; width: 50px; border-radius: 50%; display: block;">3</span> -->
           </a>
           <!-- Nếu có menu con -->

@@ -1,7 +1,7 @@
 import { Component, ContentChild, OnInit, TemplateRef, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { forkJoin, from, of } from 'rxjs';
-import { delay, map } from 'rxjs/operators'
+import { forkJoin, from, fromEvent, interval, of } from 'rxjs';
+import { delay, map, mergeAll, switchAll, take } from 'rxjs/operators'
 import { noWhiteSpace } from 'src/app/shared/validate/validate-white-space';
 import { ContentOneDirective } from './content-one.directive';
 
@@ -29,8 +29,15 @@ export class PostOneComponent implements OnInit {
       of('2').pipe(delay(2000)),
       of('hello').pipe(delay(3000)),
 
-    ]).pipe(map(([a,b,c]) => ({a,b,c}))).subscribe(this.observer)
-    
+    ]).pipe(map(([a,b,c]) => ({a,b,c})))
+
+    const hoo = interval(1000)
+    .pipe(map(val => of(`I am ${val}`)), mergeAll())
+
+
+    const ho  = fromEvent(document,'click')
+    .pipe(map(val => interval(1000).pipe(take(4))),switchAll())
+    ho
   }
 
 

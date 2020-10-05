@@ -15,5 +15,101 @@
     "dialogConfirm" : {
         "cancel" : "C4nc3l",
         "ok" : "0k"
+    },
+    "autocomplete" : {
+        "title" : "4ut0c0mpl3t3"
+    },
+    "badge" : {
+        "title" : "B4dg3"
+    },
+    "bottomSheet" : {
+        "title" : "B0tt0m sh33t"
+    },
+    "button" : {
+        "title" : "Butt0n"
+    },
+    "buttonToggle" : {
+        "title" : "Button t0ggl3"
+    },
+    "card" : {
+        "title" : "C4rd"
+    },
+    "checkbox" : {
+        "title" : "Ch3ckb0x"
+    },
+    "chips" : {
+        "title" : "Chips"
+    },
+    "datepicker" : {
+        "title" : "Dat3pick3r"
+    },
+    "dialog" : {
+        "title" : "Dial0g"
+    },
+    "divider" : {
+        "title" : "Divid3r"
+    },
+    "expansionPanel" : {
+        "title" : "3xp4nsi0n p4nel"
+    },
+    "formField" : {
+        "title" : "F0rm fi3ld"
+    },
+    "gridList" : {
+        "title" : "Grid List"
+    },
+    "icon" : {
+        "title" : "Ic0n"
+    },
+    "input" : {
+        "title" : "Input"
+    },
+    "list" : {
+        "title" : "List"
+    },
+    "menu" : {
+        "title" : "M3nu"
+    },
+    "paginator" : {
+        "title" : "P4gin4t0r"
+    },
+    "progressBar" : {
+        "title" : "Pr0gr3ss b4r"
+    },
+    "progressSpinner" : {
+        "title" : "Pr0gr3ss spinn3r"
+    },
+    "radioButton" : {
+        "title" : "R4di0 butt0n"
+    },
+    "ripples" : {
+        "title" : "Rippl3s"
+    },
+    "select" : {
+        "title" : "S3l3ct"
+    },
+    "sidenav" : {
+        "title" : "Sid3n4v"
+    },
+    "slideToggle" : {
+        "title" : "Slid3 t0ggl3"
+    },
+    "slider" : {
+        "title" : "Slid3r"
+    },
+    "snackbar" : {
+        "title" : "Sn4ckb4r"
+    },
+    "sortHeader" : {
+        "title" : "S0rt h34d3r"
+    },
+    "stepper" : {
+        "title" : "St3pp3r"
+    },
+    "table" : {
+        "title" : "T4bl3"
+    },
+    "tabs" : {
+        "title" : "T4bs"
     }
 }
