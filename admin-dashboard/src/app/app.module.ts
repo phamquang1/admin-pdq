@@ -14,6 +14,8 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+// google MAP
+
 // login gg
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
@@ -35,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient){
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    
     FlexLayoutModule,
     HttpClientModule,
     SharedModule,
@@ -46,11 +49,13 @@ export function HttpLoaderFactory(http: HttpClient){
         deps: [HttpClient],
       }
     }),
+    
+   
     // JwtModule.forRoot({
     //   config: {
     //     tokenGetter: function  tokenGetter() {
     //          return     localStorage.getItem('access_token');},  Chức năng này được sử dụng để tùy chỉnh cách JwtModule nhận mã thông báo truy cập JWT từ bộ nhớ cục bộ.
-    //     whitelistedDomains: ['localhost:4300','abc.com'], Trong mảng này, bạn có thể thêm bất kỳ tên miền nào được phép nhận JWT như API công khai.
+    //     whitelistedDomains: ['localhost:4300','abc.com'], Trong mảng này, bạn có thể thêm bất kỳ tê n miền nào được phép nhận JWT như API công khai.
     //     blacklistedRoutes: ['http://localhost:3000/auth/login'] rong mảng này, bạn có thể thêm các tuyến đường không được phép nhận mã thông báo JWT.
     //   }
     // })

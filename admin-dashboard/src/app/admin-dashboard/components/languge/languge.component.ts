@@ -10,7 +10,7 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class LangugeComponent implements OnInit {
   // language : string
-  languageForm: FormControl = new FormControl();
+  languageForm: FormControl = new FormControl(); 
   constructor(
     private translate : TranslateService,
     private languageService: LanguageService,

@@ -93,7 +93,7 @@ export class SlidebarComponent extends AppComponentBase implements OnInit {
     this.router.events.subscribe((event : RouterEvent) => {
       if(event instanceof NavigationEnd){
         const url = event.url;
-        this.section = '/admin/' + this.mappingSection(url)
+        this.section = '/admin/' + this.mappingSection(url);
         
       }
     })
@@ -138,7 +138,7 @@ export class SlidebarComponent extends AppComponentBase implements OnInit {
 
   mappingSection(url:string){
     if(url == '/app' || url == '/'){
-      return 'home'
+      return 'post'
     } else if(url.includes('/about')){
       return 'about'
     } else if(url.includes('/post')){
@@ -149,10 +149,10 @@ export class SlidebarComponent extends AppComponentBase implements OnInit {
       return 'badge'
     }else if(url.includes('/bottom-sheet')){
       return 'bottom-sheet'
-    }else if(url.includes('/button')){
-      return 'button'
     }else if(url.includes('/button-toggle')){
       return 'button-toggle'
+    }else if(url.includes('/button')){
+      return 'button'
     }else if(url.includes('/card')){
       return 'card'
     }else if(url.includes('/checkbox')){
