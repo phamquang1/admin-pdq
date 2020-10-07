@@ -10,21 +10,13 @@ import { NotifierService } from 'angular-notifier';
 export class DialogComponent implements OnInit {
   private notifier: NotifierService;
   // @ViewChild("mapMarker",{static: false}) public mapMarker: any;
-  // @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow;
+  // @ViewChild('infoWindow') infoWindow: MapInfoWindow;
   // @ViewChild(MapInfoWindow, { static: false }) mapInfoWindow: MapInfoWindow;
   @ViewChildren(MapInfoWindow) infoWindowsView: QueryList<MapInfoWindow>;
   center: google.maps.LatLngLiteral = { lat: 11.333203, lng: 106.120042 };
   zoom = 15;
-  circleCenter: google.maps.CircleOptions = {
-    center: {
-      lat: 11.333205, lng: 106.120042
-    },
-    draggable: true,
-    radius: 300,
-    editable:true,
-    fillColor: 'red'
-  };
-
+  location: any;
+  map:any
   options: google.maps.MapOptions = {
     // mapTypeId: 'hybrid',
     // zoomControl: true,
@@ -33,10 +25,30 @@ export class DialogComponent implements OnInit {
     // maxZoom: 15,
     // minZoom: 8,
   }
-  location: any;
+
   markerOptions: google.maps.MarkerOptions = { draggable: false };
+  _myMakerPosition: google.maps.MarkerOptions = {
+    position: {
+      lat: 11.328678796553339,
+      lng: 106.13212824340822
+    },
+    label: 'Gnauq',
+    title: 'My house',
+    animation: google.maps.Animation.BOUNCE,
+    icon: {
+      url: './../../../assets/img/output-onlinepngtools.png',
+      size: {
+        width: 50,
+        height: 50,
+
+      } as google.maps.Size
+    },
+    draggable: false,
+
+  }
+  //
   markerPositions = [
-    {
+    { 
       position: {
         lat: 11.337794,
         lng: 106.116862,
@@ -49,8 +61,20 @@ export class DialogComponent implements OnInit {
         animation: google.maps.Animation.DROP,
         draggable: true
       },
+      
+      circle : {
+        center: {
+          lat: 11.333205, lng: 106.120042
+        },
+        draggable: true,
+        radius: 300,
+        editable: true,
+        fillColor: 'red',
+        fillOpacity: 0.2,
+      } as google.maps.CircleOptions
     },
     {
+      
       position: {
         lat: 11.333055,
         lng: 106.12921,
@@ -63,8 +87,19 @@ export class DialogComponent implements OnInit {
         animation: google.maps.Animation.DROP,
         draggable: true
       },
+      circle : {
+        center: {
+          lat: 11.328868877994891, lng: 106.12583557147217
+        },
+        draggable: true,
+        radius: 300,
+        editable: true,
+        fillColor: 'red',
+        fillOpacity: 0.2,
+      } as google.maps.CircleOptions
     },
     {
+    
       position: {
         lat: 11.337086,
         lng: 106.122662,
@@ -72,27 +107,53 @@ export class DialogComponent implements OnInit {
       label: {
         color: 'C'
       },
-      title: 'India Safe Location ',
+      title: 'India Cafe Location ',
       options: {
         animation: google.maps.Animation.DROP,
         draggable: true
       },
+      circle : {
+        center: {
+          lat: 11.336569263017358, lng: 106.13480487841797
+        },
+        draggable: true,
+        radius: 300,
+        editable: true,
+        fillColor: 'red',
+        fillOpacity: 0.2,
+      } as google.maps.CircleOptions
     }
   ];
+
+
+  //
+  circleCenter: google.maps.CircleOptions = {
+    center: {
+      lat: 11.333205, lng: 106.120042
+    },
+    draggable: true,
+    radius: 300,
+    editable: true,
+    fillColor: 'red',
+    fillOpacity: 0.1,
+  };
+  
   constructor(
     notifier: NotifierService
   ) {
-    this.notifier = notifier
+    this.notifier = notifier;
+    this.map = document.getElementById('map')
   }
 
   ngOnInit(): void {
+    
   }
 
 
   addMarker(event) {
     console.log(event.latLng.toJSON())
     this.markerPositions.push(
-      {
+      { 
         position: event.latLng.toJSON(),
         label: {
           color: 'Q' + Math.floor(Math.random() * 100)
@@ -123,7 +184,7 @@ export class DialogComponent implements OnInit {
     return location;
   }
   onDragEnd(event) {
-    this.notifier.notify('success', `Drag from Lat :${this.location.lat} Lng : ${this.location.lng}  to Lat :${event.latLng.toJSON().lat} Lng : ${event.latLng.toJSON().lng}`)
+    this.notifier.notify('info', `Drag from Lat :${this.location.lat} Lng : ${this.location.lng}  to Lat :${event.latLng.toJSON().lat} Lng : ${event.latLng.toJSON().lng}`)
   }
   openInfoWindow(marker: MapMarker, windowIndex: number, event) {
 
@@ -137,8 +198,11 @@ export class DialogComponent implements OnInit {
         curIdx++;
       }
     });
-    this.notifier.notify('success', `latitude : ${event.latLng.toJSON().lat} , longitude : ${event.latLng.toJSON().lng} `)
+    this.notifier.notify('warning', `latitude : ${event.latLng.toJSON().lat} , longitude : ${event.latLng.toJSON().lng} `)
   }
+  // openInfoWindowMyposition(marker: MapMarker) {
+  //   this.infoWindow.open(marker);
+  // }
 
 
 }
@@ -148,6 +212,7 @@ export class MakerDto {
   label: any
   title: string
   options: any
+  circle :any
 
 }
 export class Position {
