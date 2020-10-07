@@ -1,1 +1,22 @@
-<p>dialog works!</p>
+<div class="card">
+    
+    <div class="card-body">
+        <div class="card-title">
+            <h3>Google MAP</h3>
+        </div>
+        <google-map width="100%" height="70vh" [center]="center" [zoom]="zoom" (mapClick)="addMarker($event)"
+            [options]="options" (mapDrag)="mapDrap($event)">
+            <map-marker *ngFor="let markerPosition of markerPositions ;let i = index"
+                [position]="markerPosition.position" #markerElem="mapMarker" [label]="markerPosition.label.color" [clickable]="true"
+                [title]="markerPosition.title" [options]="markerPosition.options" (mapMouseover)="onMouseOver($event)" (mapDragend)="onDragEnd($event)" (mapDragstart)="onDragStart($event)"
+                (mapMousedown)="onMouseDown($event)" (mapClick)="openInfoWindow(markerElem, i ,$event)">
+                <map-info-window [options]="markerPosition.options">
+                    <h3>Pham Dinh Quang : {{markerPosition.title}}</h3>
+                    <p>Demo {{i}}</p>
+                </map-info-window>
+            </map-marker>
+            <map-circle [options]="circleCenter" ></map-circle>
+        </google-map>
+    </div>
+</div>
+<notifier-container></notifier-container>
