@@ -5,11 +5,11 @@
   </button>
   <span>{{'appName'| translate}}</span>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="facebook()">
     <mat-icon>facebook</mat-icon>
   </button>
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="logout()">
-    <mat-icon>share</mat-icon>
+    <mat-icon>settings_power</mat-icon>
   </button>
   <app-languge></app-languge>
 </mat-toolbar>

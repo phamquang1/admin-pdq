@@ -22,8 +22,12 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.removeItem('access_token');
     localStorage.removeItem('email');
+    localStorage.removeItem('name');
     setTimeout(()=>{
       this.route.navigate(['/account/login']);
     },500)
+  }
+  facebook(){
+    window.location.href="https://www.facebook.com/phamdinhquangjibig"
   }
 }

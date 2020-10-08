@@ -13,7 +13,7 @@ export class DialogComponent implements OnInit {
   // @ViewChild('infoWindow') infoWindow: MapInfoWindow;
   // @ViewChild(MapInfoWindow, { static: false }) mapInfoWindow: MapInfoWindow;
   @ViewChildren(MapInfoWindow) infoWindowsView: QueryList<MapInfoWindow>;
-  center: google.maps.LatLngLiteral = { lat: 11.333203, lng: 106.120042 };
+  center: google.maps.LatLngLiteral = { lat: 11.328678796553339, lng: 106.13212824340822 };
   zoom = 15;
   location: any;
   map:any
@@ -47,7 +47,7 @@ export class DialogComponent implements OnInit {
 
   }
   //
-  markerPositions = [
+  markerPositions : MakerDto[] = [
     { 
       position: {
         lat: 11.337794,
@@ -149,7 +149,6 @@ export class DialogComponent implements OnInit {
     
   }
 
-
   addMarker(event) {
     console.log(event.latLng.toJSON())
     this.markerPositions.push(
@@ -167,14 +166,14 @@ export class DialogComponent implements OnInit {
     );
   }
   onMouseOver(event) {
-    console.log("onMouseOver", event);
+    // console.log("onMouseOver", event);
   }
   onMouseDown(event) {
 
-    console.log("onMouseDown", event);
+    // console.log("onMouseDown", event);
   }
   mapDrap(event: MouseEvent) {
-    console.log('mapDrag', event)
+    // console.log('mapDrag', event)
   }
   onDragStart(event) {
     this.location = {
@@ -187,7 +186,6 @@ export class DialogComponent implements OnInit {
     this.notifier.notify('info', `Drag from Lat :${this.location.lat} Lng : ${this.location.lng}  to Lat :${event.latLng.toJSON().lat} Lng : ${event.latLng.toJSON().lng}`)
   }
   openInfoWindow(marker: MapMarker, windowIndex: number, event) {
-
     /// stores the current index in forEach
     let curIdx = 0;
     this.infoWindowsView.forEach((window: MapInfoWindow) => {
@@ -203,8 +201,15 @@ export class DialogComponent implements OnInit {
   // openInfoWindowMyposition(marker: MapMarker) {
   //   this.infoWindow.open(marker);
   // }
-
-
+  markerView(marker:MakerDto){
+    this.zoom = 15;
+    this.center = {lat : marker.position.lat , lng: marker.position.lng};
+    this.zoom = this.zoom + 3;
+  }
+  currentPosition(){
+    this.center = { lat: 11.328678796553339, lng: 106.13212824340822 };
+    this.zoom = 15;
+  }
 }
 
 export class MakerDto {

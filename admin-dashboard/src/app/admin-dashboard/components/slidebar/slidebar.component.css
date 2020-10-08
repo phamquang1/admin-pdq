@@ -153,6 +153,9 @@ mat-nav-list{
 .menu .list .ml-menu li .ml-menu .ml-menu li a {
   padding-left: 95px;
 }
+a:hover{
+  background-color: #DDDDDD;
+}
 .show{
   /* display: block; */
 }

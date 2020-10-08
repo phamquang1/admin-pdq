@@ -1,36 +1,52 @@
-<div class="card">
-
-    <div class="card-body">
-        <div class="card-title">
-            <h3>Google MAP <app-button type="warn" hasGap="true">
-                    <span> Tính khoảng cách</span>
-                </app-button>
-            </h3>
-
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h3>Google MAP
+                </h3>
+            </div>
+            <div class="map">
+                <google-map id="map" width="100%" height="75vh" [center]="center" [zoom]="zoom"
+                    (mapClick)="addMarker($event)" [options]="options" (mapDrag)="mapDrap($event)">
+                    <map-marker #marker="mapMarker" [position]="_myMakerPosition.position"
+                        [label]="_myMakerPosition.label" [title]="_myMakerPosition.title" [options]="_myMakerPosition">
+                    </map-marker>
+                    <map-marker *ngFor="let markerPosition of markerPositions ;let i = index"
+                        [position]="markerPosition.position" #markerElem="mapMarker"
+                        [label]="markerPosition.label.color" [clickable]="true" [title]="markerPosition.title"
+                        [options]="markerPosition.options" (mapMouseover)="onMouseOver($event)"
+                        (mapDragend)="onDragEnd($event)" (mapDragstart)="onDragStart($event)"
+                        (mapMousedown)="onMouseDown($event)" (mapClick)="openInfoWindow(markerElem, i ,$event)">
+                        <map-info-window [options]="markerPosition.options">
+                            <h4 style="color: #007700;">Phạm Đình Quang </h4>
+                            <span style="color: #990000;">- {{markerPosition.title}}</span>
+                            <p>- Demo {{i}}</p>
+                        </map-info-window>
+                        <map-circle [options]="markerPosition.circle"></map-circle>
+                    </map-marker>
+                </google-map>
+                <div class="card table-responsive">
+                    <table class="table table-striped table-main">
+                        <thead>
+                          <tr>
+                            <th (click)="currentPosition()" style="cursor: pointer;">Name</th>
+                            <th >LAT</th>
+                            <th >LNG</th>
+                            <th >Detail</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let marker of markerPositions">
+                            <th>{{marker.label.color}}</th>
+                            <td>{{marker.position.lat}}</td>
+                            <td>{{marker.position.lng}}</td>
+                            <td (click)="markerView(marker)" style="cursor: pointer;" ><span style="color: #00BB00;">View</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
         </div>
-        <google-map id="map" width="100%" height="75vh" [center]="center" [zoom]="zoom" (mapClick)="addMarker($event)"
-            [options]="options" (mapDrag)="mapDrap($event)">
-            <map-marker #marker="mapMarker" [position]="_myMakerPosition.position" [label]="_myMakerPosition.label"
-                [title]="_myMakerPosition.title" [options]="_myMakerPosition">
-                <!-- <map-info-window #infoWindow>demo</map-info-window> -->
-            </map-marker>
-            <map-marker *ngFor="let markerPosition of markerPositions ;let i = index"
-                [position]="markerPosition.position" #markerElem="mapMarker" [label]="markerPosition.label.color"
-                [clickable]="true" [title]="markerPosition.title" [options]="markerPosition.options"
-                (mapMouseover)="onMouseOver($event)" (mapDragend)="onDragEnd($event)"
-                (mapDragstart)="onDragStart($event)" (mapMousedown)="onMouseDown($event)"
-                (mapClick)="openInfoWindow(markerElem, i ,$event)">
-                <map-info-window [options]="markerPosition.options">
-                    <h4 style="color: #007700;">Phạm Đình Quang </h4>
-                    <span style="color: #990000;">- {{markerPosition.title}}</span>
-                    <p>- Demo {{i}}</p>
-                </map-info-window>
-                <map-circle [options]="markerPosition.circle"></map-circle>
-            </map-marker>
-            <map-traffic-layer [autoRefresh]="true"></map-traffic-layer>
-            <map-bicycling-layer></map-bicycling-layer>
-            <map-transit-layer></map-transit-layer>
-        </google-map>
     </div>
 </div>
 <notifier-container></notifier-container>

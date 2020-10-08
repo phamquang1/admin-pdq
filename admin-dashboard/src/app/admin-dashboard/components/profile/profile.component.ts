@@ -8,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
   email:string;
   name:string;
+  profiles: profileDto;
   constructor() {
 
    }
 
   ngOnInit(): void {
-    this.email = localStorage.getItem('email');
-    this.name = localStorage.getItem('name');
+    this.profiles = {
+      email : this.email = localStorage.getItem('email'),
+      name : this.name = localStorage.getItem('name'),
+    }
   }
 
+}
+export class profileDto{
+  email : string
+  name: string
 }
