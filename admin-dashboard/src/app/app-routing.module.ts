@@ -2,6 +2,7 @@ import { AppComponent } from './app.component';
 import { AccountComponent } from './account/account.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthRouteGuard } from './shared/auth/auth-route.guard';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {
     path : 'admin',
     component : AppComponent,
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -43,7 +45,8 @@ const routes: Routes = [
             loadChildren : () => import('./admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardModule),
             data : {
               preLoad : true
-            }
+            },
+            
           }
         ]
       }

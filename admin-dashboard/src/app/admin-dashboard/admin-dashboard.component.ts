@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
+import { SpinnerService } from '../services/spinner.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -15,7 +16,8 @@ export class AdminDashboardComponent implements OnInit {
   displayMode = 'flat';
   watcher: Subscription;
   constructor(
-    media: MediaObserver
+    media: MediaObserver,
+    private spinner : SpinnerService
   ) {
     this.watcher = media.media$.subscribe((change: MediaChange) => {
       if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
@@ -29,6 +31,7 @@ export class AdminDashboardComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.spinner.showSpinner();
   }
   sideBarToggle($event){
     this.sidebarOpen = !this.sidebarOpen

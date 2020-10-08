@@ -1,4 +1,5 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -10,14 +11,19 @@ export class HeaderComponent implements OnInit {
   @Output() toggleSideBarMenu : EventEmitter<any> = new EventEmitter()
   constructor(
     private translate: TranslateService,
+    private route : Router
   ) { }
 
   ngOnInit(): void {
   }
   toggleSideBar(){
-    this.toggleSideBarMenu.emit()
+    this.toggleSideBarMenu.emit();
   }
   logout() {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('email');
+    setTimeout(()=>{
+      this.route.navigate(['/account/login']);
+    },500)
   }
 }

@@ -8,3 +8,8 @@ img {
   object-fit: cover;
   border-radius: 50%;
 }
+.word-box {
+  width: 100%;
+  display: block;
+  word-break: break-word;
+}

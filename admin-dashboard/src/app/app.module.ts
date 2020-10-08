@@ -12,7 +12,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 // đá ngôn ngữ
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 // google MAP
 
@@ -23,6 +23,10 @@ import {
   FacebookLoginProvider,
   AmazonLoginProvider,
 } from 'angularx-social-login';
+import { HttpErrorInterceptor } from './cores/helpers/http-error.interceptor';
+// ngx-spinner
+import {NgxSpinnerModule, NgxSpinnerService} from 'ngx-spinner'
+import { SpinnerInterceptor } from './cores/helpers/spinner.interceptor';
 
 
 export function HttpLoaderFactory(http: HttpClient){
@@ -37,6 +41,7 @@ export function HttpLoaderFactory(http: HttpClient){
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxSpinnerModule,
     
     FlexLayoutModule,
     HttpClientModule,
@@ -61,6 +66,8 @@ export function HttpLoaderFactory(http: HttpClient){
     // })
   ],
   providers: [
+    {provide : HTTP_INTERCEPTORS,useClass : HttpErrorInterceptor,multi :true},
+    // {provide : HTTP_INTERCEPTORS , useClass : SpinnerInterceptor,multi : true}
   ],
   bootstrap: [AppComponent]
 })

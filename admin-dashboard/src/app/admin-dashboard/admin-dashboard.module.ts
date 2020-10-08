@@ -12,6 +12,9 @@ import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LangugeComponent } from './components/languge/languge.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgxSpinnerModule} from 'ngx-spinner'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerInterceptor } from '../cores/helpers/spinner.interceptor';
 
 
 
@@ -30,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     AdminDashboardRoutingModule,
     SharedModule,
-    TranslateModule
+    TranslateModule,
+    NgxSpinnerModule
   ],
   exports : [
     HeaderComponent,
@@ -38,6 +42,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SlidebarComponent,
     ProfileComponent,
     LangugeComponent,
+  ],
+  providers : [
+    
   ]
 })
 export class AdminDashboardModule { }

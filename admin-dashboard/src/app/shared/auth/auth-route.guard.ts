@@ -9,15 +9,24 @@ import { LoginComponent } from 'src/app/account/login/login.component';
 })
 export class AuthRouteGuard implements CanActivate {
   constructor(
-    
-  ){
-    
+    private router: Router
+  ) {
+
   }
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> {
-      return 
+    state: RouterStateSnapshot) {
+      const accessToken = localStorage.getItem('access_token');
+      if(accessToken){
+        return true;
+      } else {
+        this.router.navigate(['/account/login'],{
+          queryParams: { returnUrl: state.url },
+        });
+        return false ;
+      }
     
+
   }
-  
+
 }

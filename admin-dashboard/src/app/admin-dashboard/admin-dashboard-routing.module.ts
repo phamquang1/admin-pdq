@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path : 'post',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -20,7 +20,7 @@ const routes: Routes = [
             data: {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       },
@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path : 'about',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -40,7 +40,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -49,7 +49,7 @@ const routes: Routes = [
   {
     path : 'autocomplete',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -60,7 +60,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -69,7 +69,7 @@ const routes: Routes = [
   {
     path : 'badge',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -80,7 +80,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -89,7 +89,7 @@ const routes: Routes = [
   {
     path : 'bottom-sheet',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -100,7 +100,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -109,7 +109,7 @@ const routes: Routes = [
   {
     path : 'button',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -120,7 +120,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -129,7 +129,7 @@ const routes: Routes = [
   {
     path : 'button-toggle',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -140,7 +140,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -149,7 +149,7 @@ const routes: Routes = [
   {
     path : 'card',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -160,7 +160,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -169,7 +169,7 @@ const routes: Routes = [
   {
     path : 'checkbox',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -180,7 +180,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -189,7 +189,7 @@ const routes: Routes = [
   {
     path : 'chips',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -200,7 +200,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -209,7 +209,7 @@ const routes: Routes = [
   {
     path : 'datepicker',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -220,7 +220,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -229,7 +229,7 @@ const routes: Routes = [
   {
     path : 'dialog',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -240,7 +240,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -249,7 +249,7 @@ const routes: Routes = [
   {
     path : 'divider',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -260,7 +260,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -269,7 +269,7 @@ const routes: Routes = [
   {
     path : 'expansion-panel',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -280,7 +280,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -289,7 +289,7 @@ const routes: Routes = [
   {
     path : 'form-field',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -300,7 +300,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -309,7 +309,7 @@ const routes: Routes = [
   {
     path : 'grid-list',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -320,7 +320,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -329,7 +329,7 @@ const routes: Routes = [
   {
     path : 'icon',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -340,7 +340,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -349,7 +349,7 @@ const routes: Routes = [
   {
     path : 'input',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -360,7 +360,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -369,7 +369,7 @@ const routes: Routes = [
   {
     path : 'list',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -380,7 +380,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -389,7 +389,7 @@ const routes: Routes = [
   {
     path : 'menu',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -400,7 +400,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -409,7 +409,7 @@ const routes: Routes = [
   {
     path : 'paginator',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -420,7 +420,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -429,7 +429,7 @@ const routes: Routes = [
   {
     path : 'progress-bar',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -440,7 +440,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -449,7 +449,7 @@ const routes: Routes = [
   {
     path : 'progress-spinner',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -460,7 +460,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -469,7 +469,7 @@ const routes: Routes = [
   {
     path : 'radio-button',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -480,7 +480,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -489,7 +489,7 @@ const routes: Routes = [
   {
     path : 'ripples',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -500,7 +500,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -509,7 +509,7 @@ const routes: Routes = [
   {
     path : 'select',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -520,7 +520,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -529,7 +529,7 @@ const routes: Routes = [
   {
     path : 'sidenav',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -540,7 +540,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -549,7 +549,7 @@ const routes: Routes = [
   {
     path : 'slide-toggle',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -560,7 +560,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -569,7 +569,7 @@ const routes: Routes = [
   {
     path : 'slider',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -580,7 +580,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -589,7 +589,7 @@ const routes: Routes = [
   {
     path : 'snackbar',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -600,7 +600,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -609,7 +609,7 @@ const routes: Routes = [
   {
     path : 'sort-header',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -620,7 +620,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -629,7 +629,7 @@ const routes: Routes = [
   {
     path : 'stepper',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -640,7 +640,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -649,7 +649,7 @@ const routes: Routes = [
   {
     path : 'table',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -660,7 +660,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
@@ -669,7 +669,7 @@ const routes: Routes = [
   {
     path : 'tabs',
     component : AdminDashboardComponent,
-    // canActivate : [AuthRouteGuard],
+    canActivate : [AuthRouteGuard],
     children : [
       {
         path : '',
@@ -680,7 +680,7 @@ const routes: Routes = [
             data : {
               preLoad : true
             },
-            // canActivate : [AuthRouteGuard],
+            canActivate : [AuthRouteGuard],
           }
         ]
       }
