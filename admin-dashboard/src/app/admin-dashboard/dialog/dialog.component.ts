@@ -1,11 +1,14 @@
 import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { NotifierService } from 'angular-notifier';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { appModuleAnimation } from 'src/app/shared/animations/router-transition';
 
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.css']
+  styleUrls: ['./dialog.component.css'],
+  animations : [appModuleAnimation()]
 })
 export class DialogComponent implements OnInit {
   private notifier: NotifierService;
@@ -29,8 +32,8 @@ export class DialogComponent implements OnInit {
   markerOptions: google.maps.MarkerOptions = { draggable: false };
   _myMakerPosition: google.maps.MarkerOptions = {
     position: {
-      lat: 11.328678796553339,
-      lng: 106.13212824340822
+      lat: 21.0481004,
+      lng: 105.7833493
     },
     label: 'Gnauq',
     title: 'My house',
@@ -50,13 +53,13 @@ export class DialogComponent implements OnInit {
   markerPositions : MakerDto[] = [
     { 
       position: {
-        lat: 11.337794,
-        lng: 106.116862,
+        lat: 21.0481004,
+        lng: 105.7833493,
       },
       label: {
         color: 'A'
       },
-      title: 'India Warning Location ',
+      title: 'HVKTQS ',
       options: {
         animation: google.maps.Animation.DROP,
         draggable: true
@@ -64,7 +67,7 @@ export class DialogComponent implements OnInit {
       
       circle : {
         center: {
-          lat: 11.333205, lng: 106.120042
+          lat: 21.0478752, lng: 105.7848294
         },
         draggable: true,
         radius: 300,
@@ -76,13 +79,13 @@ export class DialogComponent implements OnInit {
     {
       
       position: {
-        lat: 11.333055,
-        lng: 106.12921,
+        lat: 21.0480979,
+        lng: 105.7844437,
       },
       label: {
         color: 'B'
       },
-      title: 'India Safe Location ',
+      title: 'HVKTQS 2 ',
       options: {
         animation: google.maps.Animation.DROP,
         draggable: true
@@ -107,7 +110,7 @@ export class DialogComponent implements OnInit {
       label: {
         color: 'C'
       },
-      title: 'India Cafe Location ',
+      title: 'HVKTQS 3 ',
       options: {
         animation: google.maps.Animation.DROP,
         draggable: true
@@ -139,7 +142,8 @@ export class DialogComponent implements OnInit {
   };
   
   constructor(
-    notifier: NotifierService
+    notifier: NotifierService,
+    private spinnerDemo: NgxSpinnerService
   ) {
     this.notifier = notifier;
     this.map = document.getElementById('map')
@@ -151,19 +155,23 @@ export class DialogComponent implements OnInit {
 
   addMarker(event) {
     console.log(event.latLng.toJSON())
-    this.markerPositions.push(
-      { 
-        position: event.latLng.toJSON(),
-        label: {
-          color: 'Q' + Math.floor(Math.random() * 100)
-        },
-        title: 'Gnauq' + Math.floor(Math.random() * 100),
-        options: {
-          animation: google.maps.Animation.DROP,
-          draggable: true
-        }
-      } as MakerDto
-    );
+    this.spinnerDemo.show();
+    setTimeout(() => {
+      this.markerPositions.push(
+        { 
+          position: event.latLng.toJSON(),
+          label: {
+            color: 'Q' + Math.floor(Math.random() * 100)
+          },
+          title: 'Gnauq' + Math.floor(Math.random() * 100),
+          options: {
+            animation: google.maps.Animation.DROP,
+            draggable: true
+          }
+        } as MakerDto
+      );
+      this.spinnerDemo.hide();
+    }, 3000);
   }
   onMouseOver(event) {
     // console.log("onMouseOver", event);

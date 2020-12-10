@@ -4,6 +4,8 @@ import { SocialAuthService, SocialUser, AmazonLoginProvider } from "angularx-soc
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { Router } from '@angular/router';
 import { SpinnerService } from 'src/app/services/spinner.service';
+import { HttpClient } from '@angular/common/http';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -16,12 +18,13 @@ export class LoginComponent implements OnInit {
   loggedIn: boolean;
   constructor(
     private authService: SocialAuthService,
-    private spinner : SpinnerService,
-    private route : Router
+    private spinner: SpinnerService,
+    private route: Router,
+    private http: HttpClient,
+    private spinnerDemo: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
-    
     this.authService.authState.subscribe(user => {
       this.user = user;
       console.log("user",this.user)
@@ -36,7 +39,15 @@ export class LoginComponent implements OnInit {
   }
   
   signInWithGoogle(): void {
+    this.spinnerDemo.show();
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    setTimeout(() => {
+      this.http.get('https://reqres.in/api/users?page=2')
+      .subscribe(data => {
+        console.log(data);
+        this.spinnerDemo.hide();
+      });
+    }, 4000);
   }
 
   signInWithFB(): void {
@@ -49,6 +60,7 @@ export class LoginComponent implements OnInit {
 
   signOut(): void {
     this.authService.signOut();
+    
   }
 
 

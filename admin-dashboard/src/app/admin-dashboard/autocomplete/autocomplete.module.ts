@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AutocompleteRoutingModule } from './autocomplete-routing.module';
 import { AutocompleteComponent } from './autocomplete.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     AutocompleteRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class AutocompleteModule { }

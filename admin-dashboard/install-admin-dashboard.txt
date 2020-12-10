@@ -10,6 +10,8 @@ npm install @ngx-translate/http-loader --save //tranlate language
 npm install date-fns --save // xứ lý datetime thay cho momentjs khá ngon, nodé dùng đc
 npm install @auth0/angular-jwt --save //
 npm i ngx-spinner --save // spinner request http
+<ngx-spinner></ngx-spinner>
+
 
 
 npm install angular-notifier // noityfi error, chú ý cái này phải import @import "~angular-notifier/styles"; trong file style.css

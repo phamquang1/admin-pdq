@@ -66,8 +66,8 @@ export function HttpLoaderFactory(http: HttpClient){
     // })
   ],
   providers: [
-    {provide : HTTP_INTERCEPTORS,useClass : HttpErrorInterceptor,multi :true},
-    // {provide : HTTP_INTERCEPTORS , useClass : SpinnerInterceptor,multi : true}
+    // {provide : HTTP_INTERCEPTORS, useClass : HttpErrorInterceptor, multi : true},
+    {provide : HTTP_INTERCEPTORS , useClass : SpinnerInterceptor, multi : true}
   ],
   bootstrap: [AppComponent]
 })

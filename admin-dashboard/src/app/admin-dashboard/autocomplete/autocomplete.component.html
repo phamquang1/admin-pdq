@@ -4,5 +4,28 @@
             <h3>Angular-editor</h3>
         </div>
         <div class="dropdown-divider"></div>
+        <form [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose A</mat-label>
+                <mat-select formControlName="a">
+                    <mat-option>Choose</mat-option>
+                    <mat-option *ngFor="let item of a1 " value="{{item.id}}">{{item.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Choose B</mat-label>
+                <mat-select formControlName="option">
+                    <mat-option>Choose</mat-option>
+                    <mat-option *ngFor="let option of options" value="{{option.id}}">{{option.course}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Choose C</mat-label>
+                <mat-select formControlName="end">
+                    <mat-option>Choose</mat-option>
+                    <mat-option *ngFor="let end of ends" value="{{end}}">{{end}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
     </div>
 </div>
